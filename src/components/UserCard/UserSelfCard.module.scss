@@ -1,0 +1,93 @@
+
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  width: 60%;
+  min-width: 250px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  margin-top: 30px;
+  display: inline-block;
+  margin-left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 3px 6px -1px #ccc;
+}
+
+.image {
+  border: 1px solid gray;
+  padding: 5px;
+  border-radius: 50%;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+.detail {
+  margin: 20px;
+  p {
+    margin: 0;
+  }
+
+  .header {
+    font-size: 20px;
+  }
+  .content {
+    font-size: 30px;
+    font-weight: 500;
+  }
+}
+
+.userDataItems {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.userDataItemSpan {
+  margin: 10px 24px;
+  font-size: 30px;
+  position: relative;
+  color: #ccc;
+  width: 37px;
+  overflow: hidden;
+  height: 37px;
+
+}
+
+.hideIcon{
+  transition: 0.3s;
+
+  span {
+    opacity: 1;
+    color: #79b039;
+    border-top: solid 2px #79b039;
+    padding-top: 3px;
+    display: block;
+
+    &::before {
+      content: "";
+      width: 4px;
+      height: 4px;
+      background: #79b039;
+      position: absolute;
+      top: 44%;
+      right: 17px;
+      transform: rotate(45deg);
+      opacity: 0;
+    }
+  }
+}
+
+.userDataItemSpan:hover .hideIcon {
+  transform: translateY(-34px);
+}
+
+.userDataItemSpan:hover .hideIcon span::before {
+  opacity: 1;
+}
+
