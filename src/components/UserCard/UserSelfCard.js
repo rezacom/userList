@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./UserSelfCard.module.scss";
 import { FaUserCircle } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
@@ -8,11 +8,24 @@ import { FiPhone } from 'react-icons/fi';
 import { FaUnlock } from 'react-icons/fa';
 
 const UserSelfCard = ({ users }) => {
-  const [textStatus, setTExtStatus] = useState("name");
+  console.log(users,'----------');
+  
+  // const [textStatus, setTExtStatus] = useState({users});
   const [textContent, setTextContent] = useState({
     header: "Hi, My name is",
     content: `${users.name.first} ${users.name.last}`
   });
+
+  useEffect(() => {
+    if (users) {
+      setTextContent({
+        header: "Hi, My name is",
+        content: `${users.name.first} ${users.name.last}`
+      });
+    }
+    
+  }, [users]);
+ 
   return (
     <>
       <div className={styles.card}>
