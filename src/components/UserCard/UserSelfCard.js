@@ -7,8 +7,8 @@ import { FaMapMarked } from 'react-icons/fa';
 import { FiPhone } from 'react-icons/fi';
 import { FaUnlock } from 'react-icons/fa';
 
+
 const UserSelfCard = ({ users }) => {
-  console.log(users,'----------');
   
   // const [textStatus, setTExtStatus] = useState({users});
   const [textContent, setTextContent] = useState({

@@ -3,6 +3,7 @@ import UserCard from "../UserCard/UserCard";
 import '../../App.css'
 
 const UserList = () => {
+  const [userList1, setUserList1] = useState([])
   const [users, setUsers] = useState([]);
   const [status, setStatus] = useState(true);
   const [link, setLink] = useState("https://api.randomuser.me/");
@@ -15,14 +16,19 @@ const UserList = () => {
           setUsers(res.results[0]);
           setStatus(false);
         });
+    
     }
   }, [link]);
 
   const handleLink = myLink => {
+
     setLink("");
     setTimeout(() => {
       setLink(myLink);
     }, 1000);
+
+    setUserList1([...userList1, users])
+
   };
 
   return (
@@ -35,8 +41,17 @@ const UserList = () => {
             new user
           </button>
         </header>
+
         {status ? "...loading" : <UserCard myuser={users} />}
+        {
+
+        userList1.map( item => (
+          
+          <UserCard myuser={item} />
+
+        )) 
         
+        }
       </div>
     </>
   );
